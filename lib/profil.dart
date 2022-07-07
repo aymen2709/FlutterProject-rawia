@@ -105,7 +105,7 @@ class _Profil extends State<Profil> {
                                 SizedBox(width: 5),
                                 /// We will use Text (with overflow, maxLines and softWrap) inside Flexible to avoid pixel overflow error
                                 Flexible(
-                                    child: Text('ben Foulen',
+                                    child: Text('A long last name',
                                         overflow: TextOverflow.fade,
                                         maxLines: 1,
                                         softWrap: false,
