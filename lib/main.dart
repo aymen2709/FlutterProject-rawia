@@ -4,6 +4,9 @@ import 'package:flutter_myapp/homeScreen.dart';
 import 'package:flutter_myapp/navigation.dart';
 import 'package:flutter_myapp/profil.dart';
 
+import 'ObservationsDetails.dart';
+import 'observationslist.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white),
       initialRoute: HomeScreen.idScreen,
       routes: {
-        HomeScreen.idScreen: (context) =>  Profil(),
+        HomeScreen.idScreen: (context) =>  Observationslist(),
       },
       debugShowCheckedModeBanner: false,
     );

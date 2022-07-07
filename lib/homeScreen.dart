@@ -73,30 +73,38 @@ class HomeScreen extends StatelessWidget {
                           height: 75,
                         ),
                         Text('Administrations ',
-                            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 20.0)),
+                            style: TextStyle(color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0)),
                       ],
                     ),
                     Container(
                         margin: const EdgeInsets.all(2.0),
                         padding: const EdgeInsets.all(5.0),
                         decoration:
-                        BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
+                        BoxDecoration(color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(10.0)),
                         child: Container(
                             decoration:
-                            BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                            BoxDecoration(color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0)),
                             child: Theme(
                               // Remove borders from ExpansionTile
-                              data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                              data: ThemeData().copyWith(
+                                  dividerColor: Colors.transparent),
                               child: ExpansionTile(
                                 title: Row(
                                   children: const <Widget>[
                                     Image(
-                                      image: AssetImage('assets/images/femme.png'),
+                                      image: AssetImage(
+                                          'assets/images/femme.png'),
                                       width: 33.0,
                                       height: 33.0,
                                     ),
                                     Text('Comment nous joindre ?',
-                                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18)),
                                   ],
                                 ),
                                 children: [
@@ -109,8 +117,11 @@ class HomeScreen extends StatelessWidget {
                                                   color: Colors.black
                                               ),
                                               children: [
-                                                TextSpan(text: 'Adresse: ', style: TextStyle(color: Colors.grey)),
-                                                TextSpan(text: 'Avenue de la république 4011, Hammam Sousse'),
+                                                TextSpan(text: 'Adresse: ',
+                                                    style: TextStyle(
+                                                        color: Colors.grey)),
+                                                TextSpan(
+                                                    text: 'Avenue de la république 4011, Hammam Sousse'),
 
                                               ]
                                           ),
@@ -127,7 +138,8 @@ class HomeScreen extends StatelessWidget {
                                                 style: TextStyle(
                                                   color: Colors.grey,
                                                 )),
-                                            Text('73262086', style: TextStyle()),
+                                            Text(
+                                                '73262086', style: TextStyle()),
                                           ],
                                         ),
                                         SizedBox(
@@ -139,7 +151,8 @@ class HomeScreen extends StatelessWidget {
                                                 style: TextStyle(
                                                   color: Colors.grey,
                                                 )),
-                                            Text('73262086', style: TextStyle()),
+                                            Text(
+                                                '73262086', style: TextStyle()),
                                           ],
                                         ),
                                         SizedBox(
@@ -151,7 +164,8 @@ class HomeScreen extends StatelessWidget {
                                                 style: TextStyle(
                                                   color: Colors.grey,
                                                 )),
-                                            Text('communehsousse@topnet.tn', style: TextStyle()),
+                                            Text('communehsousse@topnet.tn',
+                                                style: TextStyle()),
                                           ],
                                         ),
                                       ]))
@@ -162,22 +176,28 @@ class HomeScreen extends StatelessWidget {
                         margin: const EdgeInsets.all(2.0),
                         padding: const EdgeInsets.all(5.0),
                         decoration:
-                        BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
+                        BoxDecoration(color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(10.0)),
                         child: Container(
                             decoration:
-                            BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                            BoxDecoration(color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0)),
                             child: Theme(
-                              data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                              data: ThemeData().copyWith(
+                                  dividerColor: Colors.transparent),
                               child: ExpansionTile(
                                 title: Row(
                                   children: const <Widget>[
                                     Image(
-                                      image: AssetImage('assets/images/clock-gris.jpg'),
+                                      image: AssetImage(
+                                          'assets/images/clock-gris.jpg'),
                                       width: 35.0,
                                       height: 35.0,
                                     ),
                                     Text('Horaire de travail',
-                                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18)),
                                   ],
                                 ),
                                 children: [
@@ -185,11 +205,13 @@ class HomeScreen extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(children: [
                                         Row(children: const [
-                                          Text('Lundi-Jeudi:', style: TextStyle(fontSize: 15)),
+                                          Text('Lundi-Jeudi:',
+                                              style: TextStyle(fontSize: 15)),
                                           SizedBox(
                                             width: 6.0,
                                           ),
-                                          Text('8:30-12:30', style: TextStyle(fontSize: 15)),
+                                          Text('8:30-12:30',
+                                              style: TextStyle(fontSize: 15)),
                                           SizedBox(
                                             width: 9.0,
                                           ),
@@ -227,7 +249,9 @@ class HomeScreen extends StatelessWidget {
                                         Row(
                                           children: const [
                                             Text('Samedi: fermé ',
-                                                style: TextStyle(color: Colors.red, fontSize: 15)),
+                                                style: TextStyle(
+                                                    color: Colors.red,
+                                                    fontSize: 15)),
                                           ],
                                         ),
                                         const SizedBox(
@@ -236,7 +260,9 @@ class HomeScreen extends StatelessWidget {
                                         Row(
                                           children: const [
                                             Text('Dimanche: fermé',
-                                                style: TextStyle(color: Colors.red, fontSize: 15)),
+                                                style: TextStyle(
+                                                    color: Colors.red,
+                                                    fontSize: 15)),
                                           ],
                                         ),
                                       ]))
@@ -247,31 +273,40 @@ class HomeScreen extends StatelessWidget {
                         margin: const EdgeInsets.all(2.0),
                         padding: const EdgeInsets.all(5.0),
                         decoration:
-                        BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
+                        BoxDecoration(color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(10.0)),
                         child: Container(
                             decoration:
-                            BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+                            BoxDecoration(color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0)),
                             child: Theme(
-                              data: ThemeData().copyWith(dividerColor: Colors.transparent),
+                              data: ThemeData().copyWith(
+                                  dividerColor: Colors.transparent),
                               child: ExpansionTile(
                                 title: Row(
                                   children: const <Widget>[
                                     Image(
-                                      image: AssetImage('assets/images/municipalite.png'),
+                                      image: AssetImage(
+                                          'assets/images/municipalite.png'),
                                       width: 25.0,
                                       height: 25.0,
                                     ),
                                     Text('Aller à la municipalité',
-                                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18)),
                                   ],
                                 ),
                                 children: [
                                   Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment
+                                              .spaceEvenly, children: [
                                         Column(children: [
                                           const Image(
-                                            image: AssetImage('assets/images/fileattente.jpg'),
+                                            image: AssetImage(
+                                                'assets/images/fileattente.jpg'),
                                             width: 50.0,
                                             height: 50.0,
                                           ),
@@ -292,7 +327,9 @@ class HomeScreen extends StatelessWidget {
                                             alignment: Alignment.center,
                                             child: const Text(
                                               "10",
-                                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16),
                                             ),
                                           ),
                                         ]),
@@ -301,7 +338,8 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         Column(children: [
                                           const Image(
-                                            image: AssetImage('assets/images/clock.png'),
+                                            image: AssetImage(
+                                                'assets/images/clock.png'),
                                             width: 50.0,
                                             height: 50.0,
                                           ),
@@ -322,7 +360,9 @@ class HomeScreen extends StatelessWidget {
                                             alignment: Alignment.center,
                                             child: const Text(
                                               "10 min",
-                                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16),
                                             ),
                                           )
                                         ]),
@@ -336,17 +376,24 @@ class HomeScreen extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.all(2.0),
                       padding: const EdgeInsets.all(5.0),
-                      width: MediaQuery.of(context).size.width,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width,
                       height: 250,
                       decoration:
-                      BoxDecoration(color: Colors.grey[200], borderRadius: BorderRadius.circular(10.0)),
+                      BoxDecoration(color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: GoogleMap(
                         onMapCreated: _onMapCreated,
                         initialCameraPosition: const CameraPosition(
                           target: _center,
                           zoom: 18.0,
                         ),
-                        markers: {const Marker(markerId: MarkerId("source"), position: _center)},
+                        markers: {
+                          const Marker(
+                              markerId: MarkerId("source"), position: _center)
+                        },
                       ),
                     ),
                     Container(
@@ -364,8 +411,9 @@ class HomeScreen extends StatelessWidget {
                                               color: Colors.black
                                           ),
                                           children: [
-                                            TextSpan(text: 'Réjoignez nous sur les réseaux sociaux:',
-                                            style: TextStyle(fontSize: 18)
+                                            TextSpan(
+                                                text: 'Réjoignez nous sur les réseaux sociaux:',
+                                                style: TextStyle(fontSize: 18)
                                             ),
 
                                           ]
@@ -468,8 +516,10 @@ class HomeScreen extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Mes observations'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Administration'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home), label: 'Mes observations'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home), label: 'Administration'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil')
           ],
           currentIndex: _selectedIndex,
