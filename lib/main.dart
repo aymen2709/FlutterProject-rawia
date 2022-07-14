@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white),
       initialRoute: HomeScreen.idScreen,
       routes: {
-        HomeScreen.idScreen: (context) =>  Abs(),
+        HomeScreen.idScreen: (context) => Profil(),
       },
       debugShowCheckedModeBanner: false,
     );

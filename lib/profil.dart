@@ -12,6 +12,167 @@ class Profil extends StatefulWidget {
 bool status = false;
 
 class _Profil extends State<Profil> {
+  bool _isShown = true;
+  bool _value = false;
+  int val = -1;
+  void _update(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext ctx) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15.0))),
+            contentPadding: EdgeInsets.all(14.0),
+            title: const Text('Profil',textAlign:TextAlign.center,style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 22.0)),
+            content:
+            ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 1,
+                  itemBuilder: (BuildContext context, int index) {
+             return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                //position
+                mainAxisSize: MainAxisSize.min,
+                // wrap content in flutter
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person,color: Colors.blue[100],),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(width: 3, color: Colors.red)
+                      ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 2),
+                      hintText: 'Nom',
+                    ),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(169, 180, 202, 1)
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person,color: Colors.blue[100]),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(width: 3, color: Colors.red)
+                      ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 2),
+                      hintText: 'Prénom',
+                    ),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(169, 180, 202, 1)
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.format_list_numbered,color: Colors.blue[100]),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(width: 3, color: Colors.red)
+                      ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 2),
+                      hintText: 'Âge',
+                    ),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(169, 180, 202, 1)
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.call,color: Colors.blue[100]),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(width: 3, color: Colors.red)
+                      ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 2),
+                      hintText: 'Numéro',
+                    ),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500,
+                        color: const Color.fromRGBO(169, 180, 202, 1)
+                    ),
+                  ),
+                    Row(
+                    children: [
+                    Flexible(
+                    flex: 1,
+                    child: Row(
+                    children: [
+                    Radio(
+                    value: 1,
+                     groupValue: 1, onChanged: (index) {}),
+                    Expanded(
+                    child: Text(
+                    'Homme',
+                    ))
+                    ],
+                    ),
+                    ),
+                    Flexible(
+                    flex: 1,
+                    child: Row(
+                    children: [
+                    Radio(
+                    value: 2,
+                     groupValue: "null", onChanged: (index) {}),
+                    Text('Femme')
+                    ],
+                    ),
+                    ),
+                    ])
+
+
+                ],
+              );}),
+            actions: [
+              // The "Yes" button
+              GestureDetector(
+              onTap: (){
+                Navigator.of(context).pop();
+          },
+              child:Container(
+                //padding: EdgeInsets.symmetric(vertical: ),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(width: 1, color: Colors.blue),
+                ),
+                width: 80,
+                height: 30,
+                alignment: Alignment.center,
+                child: const Text(
+                  "Annuler",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+
+              )),
+              GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
+                  child:Container(
+                    //padding: EdgeInsets.symmetric(vertical: ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(width: 1, color: Colors.blue),
+                    ),
+                    width: 80,
+                    height: 30,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "Valider",
+                      style: TextStyle(color: Colors.blue, fontSize: 14),
+                    ),
+
+                  ))
+            ],
+
+          );
+        });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,9 +252,9 @@ class _Profil extends State<Profil> {
                                     Icons.edit_outlined,
                                     color: Colors.blue,
                                   ),
-                                  onPressed: () {
-                                    // do something
-                                  },
+                                  onPressed:
+                                     _isShown == true
+                                        ? () => _update(context): null,
                                 )
                               ],
                             ),
