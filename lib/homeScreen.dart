@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_myapp/Notifications.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:fluttericon/fontelico_icons.dart';
@@ -54,7 +55,8 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.blue,
                 ),
                 onPressed: () {
-                  // do something
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Notifications()));
                 },
               )
             ],

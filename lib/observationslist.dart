@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_myapp/Notifications.dart';
 import 'package:flutter_myapp/ObservationsDetails.dart';
 
 class Observationslist extends StatefulWidget {
@@ -48,7 +49,8 @@ class _Observationslist extends State<Observationslist> {
                 color: Colors.blue,
               ),
               onPressed: () {
-                // do something
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Notifications()));
               },
             )
           ],
@@ -100,62 +102,69 @@ class _Observationslist extends State<Observationslist> {
               const SizedBox(
                 height: 7,
               ),
-              Card(
-                elevation: 0,
-                  color: Colors.grey[50],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => ObservationsDetails()));
+                },
+                child: Card(
+                  elevation: 0,
+                    color: Colors.grey[50],
 
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
 
-                         Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                           children: [
-                             Image(
-                               image: AssetImage('assets/images/observation.PNG'),
-                               width: 45.0,
-                               height: 45.0,
-                             ),
-                                 Flexible(
-                                     child: Text('Votre observation Pateau de lumière '
-                                         'de lumière cassé est cours de traitement',
-                                         overflow: TextOverflow.fade,
-                                         maxLines: 1,
-                                         softWrap: false,
-                                         style: TextStyle(fontWeight: FontWeight.w600,
-                                             color: const Color.fromRGBO(41,41, 41, 1)
-                                         ))),
-                            IconButton(
-                               icon: Icon(
-                                 Icons.arrow_forward_ios_sharp,
-                                 color: Colors.grey,
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             children: [
+                               Image(
+                                 image: AssetImage('assets/images/observation.PNG'),
+                                 width: 45.0,
+                                 height: 45.0,
                                ),
-                               onPressed: () {
-                                 Navigator.pushReplacement(context,
-                                     MaterialPageRoute(builder: (context) => ObservationsDetails()));
-                               },
-                             )
+                                   Flexible(
+                                       child: Text('Votre observation Pateau de lumière '
+                                           'de lumière cassé est cours de traitement',
+                                           overflow: TextOverflow.fade,
+                                           maxLines: 3,
+                                           softWrap: true,
+                                           style: TextStyle(fontWeight: FontWeight.w600,
+                                               color: const Color.fromRGBO(41,41, 41, 1)
+                                           ))),
+                               IconButton(
+                                 icon: Icon(
+                                   Icons.arrow_forward_ios_sharp,
+                                   color: Colors.grey,
+                                 ),
+                                 onPressed: () {
+                                   Navigator.pushReplacement(context,
+                                       MaterialPageRoute(builder: (context) => ObservationsDetails()));
+                                 },
+                               )
 
-                           ],
-                         ),
-                          Row(
-                            children: [
-                              SizedBox(width: 47,),
-                              Text ("23 Jan 2022 a 12:15",style: TextStyle(
-                                  color: const Color.fromRGBO(155, 155, 155, 1),
-                                  fontWeight: FontWeight.w400 ),),
+                             ],
+                           ),
+                            Row(
+                              children: [
+                                SizedBox(width: 47,),
+                                Text ("23 Jan 2022 a 12:15",style: TextStyle(
+                                    color: const Color.fromRGBO(155, 155, 155, 1),
+                                    fontWeight: FontWeight.w400 ),),
 
 
-                            ],
-                          ),
-                          Divider(
-                            thickness: 1, // thickness of the line
-                            indent: 5, // empty space to the leading edge of divider.
-                            endIndent: 5, // empty space to the trailing edge of the divider.
-                            color: const Color.fromRGBO(0, 0, 0, 0.1), // The color to use when painting the line.
-                            // The divider's height extent.
-                          ),
+                              ],
+                            ),
+                            Divider(
+                              thickness: 1, // thickness of the line
+                              indent: 5, // empty space to the leading edge of divider.
+                              endIndent: 5, // empty space to the trailing edge of the divider.
+                              color: const Color.fromRGBO(0, 0, 0, 0.1), // The color to use when painting the line.
+                              // The divider's height extent.
+                            ),
 
-                    ]),
+                      ]),
+                  
+                ),
               )
     ]
     )

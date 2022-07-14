@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_myapp/Notifications.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 class Profil extends StatefulWidget {
@@ -46,7 +47,8 @@ class _Profil extends State<Profil> {
                   color: Colors.blue,
                 ),
                 onPressed: () {
-                  // do something
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Notifications()));
                 },
               )
             ],

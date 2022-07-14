@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_myapp/NewsDetails.dart';
+import 'package:flutter_myapp/Notifications.dart';
 import 'package:flutter_myapp/abservations.dart';
 import 'package:flutter_myapp/homeScreen.dart';
 import 'package:flutter_myapp/navigation.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white),
       initialRoute: HomeScreen.idScreen,
       routes: {
-        HomeScreen.idScreen: (context) =>  Observationslist(),
+        HomeScreen.idScreen: (context) =>  Abs(),
       },
       debugShowCheckedModeBanner: false,
     );

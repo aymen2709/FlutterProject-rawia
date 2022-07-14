@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_myapp/NewsDetails.dart';
+
+import 'Notifications.dart';
 
 class Abs extends StatefulWidget {
   const Abs({Key? key}) : super(key: key);
@@ -47,7 +50,8 @@ class _Abs extends State<Abs> {
                   color: Colors.blue,
                 ),
                 onPressed: () {
-                  // do something
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Notifications()));
                 },
               )
             ],
@@ -80,107 +84,113 @@ class _Abs extends State<Abs> {
                               const SizedBox(
                                 height: 7,
                               ),
-                              Card(
-                                elevation: 8,
-                                shadowColor: Colors.grey[50],
-                                shape: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(13),
-                                    borderSide: const BorderSide(color: Colors.white)),
-                                child: Padding(
-                                    padding: const EdgeInsets.all(18),
-                                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                      /// Image news
-                                      Container(
-                                        height: 150.0,
-                                        decoration: const BoxDecoration(
-                                          image: DecorationImage(
-                                              fit: BoxFit.cover, image: AssetImage('assets/images/news.jpg')),
-                                          borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(13.0), topLeft: Radius.circular(13.0)),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 6),
-
-                                      /// Tag, date, time
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          /// TAG
-                                          Container(
-                                            //padding: EdgeInsets.symmetric(vertical: ),
-                                            decoration: BoxDecoration(
-                                              color: Colors.green[50],
-                                              borderRadius: BorderRadius.circular(30),
-                                              border: Border.all(width: 1, color: Colors.green),
-                                            ),
-                                            width: 75,
-                                            height: 20,
-                                            alignment: Alignment.center,
-                                            child: const Text(
-                                              "Travaux",
-                                              style: TextStyle(color: Colors.green, fontSize: 14),
-                                            ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder: (context) => NewsDetails()));
+                                },
+                                child: Card(
+                                  elevation: 8,
+                                  shadowColor: Colors.grey[50],
+                                  shape: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(13),
+                                      borderSide: const BorderSide(color: Colors.white)),
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(18),
+                                      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                                        /// Image news
+                                        Container(
+                                          height: 150.0,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                                fit: BoxFit.cover, image: AssetImage('assets/images/news.jpg')),
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(13.0), topLeft: Radius.circular(13.0)),
                                           ),
+                                        ),
+                                        const SizedBox(height: 6),
 
-                                          /// Date and time
-                                          Row(
-                                            children: [
-                                              Container(
-                                                padding: const EdgeInsets.only(
-                                                  bottom:
-                                                  1, // This can be the space you need between text and underline
-                                                ),
-                                                decoration: const BoxDecoration(
-                                                    border: Border(
-                                                        bottom: BorderSide(
-                                                          color: Colors.green,
-                                                          width: 1.0, // This would be the width of the underline
-                                                        ))),
-                                                child: const Text(
-                                                  "6-02-2022",
-                                                  style: TextStyle(
-                                                    fontSize: 14,
+                                        /// Tag, date, time
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            /// TAG
+                                            Container(
+                                              //padding: EdgeInsets.symmetric(vertical: ),
+                                              decoration: BoxDecoration(
+                                                color: Colors.green[50],
+                                                borderRadius: BorderRadius.circular(30),
+                                                border: Border.all(width: 1, color: Colors.green),
+                                              ),
+                                              width: 75,
+                                              height: 20,
+                                              alignment: Alignment.center,
+                                              child: const Text(
+                                                "Travaux",
+                                                style: TextStyle(color: Colors.green, fontSize: 14),
+                                              ),
+                                            ),
+
+                                            /// Date and time
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  padding: const EdgeInsets.only(
+                                                    bottom:
+                                                    1, // This can be the space you need between text and underline
+                                                  ),
+                                                  decoration: const BoxDecoration(
+                                                      border: Border(
+                                                          bottom: BorderSide(
+                                                            color: Colors.green,
+                                                            width: 1.0, // This would be the width of the underline
+                                                          ))),
+                                                  child: const Text(
+                                                    "6-02-2022",
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                              const SizedBox(width: 20),
-                                              const Image(
-                                                image: AssetImage('assets/images/clock.png'),
-                                                width: 15.0,
-                                                height: 15.0,
-                                              ),
-                                              const SizedBox(width: 4),
-                                              const Text(
-                                                "2",
-                                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                                              ),
-                                              const SizedBox(
-                                                height: 20,
-                                              ),
-                                              const Text(
-                                                "Jours",
-                                                style: TextStyle(fontSize: 10),
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                      const SizedBox(height: 8),
-
-                                      /// Article title
-                                      const Text(
-                                        "Travaux sur la route de la plage",
-                                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                      ),
-                                      const SizedBox(height: 10),
-
-                                      const Text(
-                                        "Nous vous informons que nous avons des travaux pour améliorer la qualité de nos route",
-                                        style: TextStyle(
-                                          color: Colors.grey,
+                                                const SizedBox(width: 20),
+                                                const Image(
+                                                  image: AssetImage('assets/images/clock.png'),
+                                                  width: 15.0,
+                                                  height: 15.0,
+                                                ),
+                                                const SizedBox(width: 4),
+                                                const Text(
+                                                  "2",
+                                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                                                ),
+                                                const SizedBox(
+                                                  height: 20,
+                                                ),
+                                                const Text(
+                                                  "Jours",
+                                                  style: TextStyle(fontSize: 10),
+                                                )
+                                              ],
+                                            )
+                                          ],
                                         ),
-                                      ),
-                                    ])),
+                                        const SizedBox(height: 8),
+
+                                        /// Article title
+                                        const Text(
+                                          "Travaux sur la route de la plage",
+                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                        ),
+                                        const SizedBox(height: 10),
+
+                                        const Text(
+                                          "Nous vous informons que nous avons des travaux pour améliorer la qualité de nos route",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ])),
+                                ),
                               )
                             ]));
                       })),

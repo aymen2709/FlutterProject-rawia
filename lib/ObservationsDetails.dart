@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_myapp/Notifications.dart';
 import 'package:flutter_myapp/observationslist.dart';
 
 class ObservationsDetails extends StatefulWidget {
@@ -47,9 +48,10 @@ class _ObservationsDetails extends State<ObservationsDetails> {
     Icons.notifications,
     color: Colors.blue,
     ),
-    onPressed: () {
-    // do something
-    },
+      onPressed: () {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => Notifications()));
+      },
     )
     ],
    leading: new IconButton(
@@ -59,7 +61,7 @@ class _ObservationsDetails extends State<ObservationsDetails> {
             ),
             backgroundColor: Colors.white),
         body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 18),
+        padding: EdgeInsets.all(17),
     shrinkWrap: true,
     itemCount: 1,
     itemBuilder: (BuildContext context, int index) {
@@ -76,9 +78,7 @@ class _ObservationsDetails extends State<ObservationsDetails> {
         fontWeight: FontWeight.w600, fontSize: 22.0)),
     ],
     ),
-      SizedBox(
-        height: 15,
-      ),
+
       Container(
         padding: EdgeInsets.all(14),
         decoration: BoxDecoration(
